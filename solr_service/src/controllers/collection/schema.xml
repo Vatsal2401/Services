@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<schema name="solr-config" version="1.6">
+
+<!-- 
+{
+  "firstname": "John",
+  "lastname": "Doe,
+  "id": "1",
+  "title": "Example Document",
+  "author": "John Doe",
+  "year": 2023,
+  "price": 29.99,
+  "isAvailable": true,
+  "categories": ["Fiction", "Thriller"],
+  "publishDate": "2023-06-27T10:00:00Z",
+  "content": "This is an example document content. It contains some sample text for demonstration purposes."
+} -->
+
+    <field name="id" type="string" indexed="true" stored="true" required="true" multiValued="false" />
+    <field name="title" type="string" indexed="true" stored="true" required="true" multiValued="false" />
+    <field name="author_first_name" type="text_general" indexed="true" stored="true" required="true" multiValued="false" />
+    <field name="author_last_name" type="text_general" indexed="true" stored="true" required="true" multiValued="false" />
+    <field name="price" type="pfloat" indexed="true" stored="true" required="true" multiValued="false" />
+    <field name="isAvailable" type="boolean" indexed="true" stored="true" required="true" multiValued="false" />
+    <field name="categories" type="string" indexed="true" stored="true" required="true" multiValued="true" />
+    <field name="publishDate" type="pdate" indexed="true" stored="true" required="true" multiValued="true" />
+    <field name="overview" type="text_general" indexed="true" stored="true" required="true" multiValued="true" />
+    <field name="pages" type="pint" indexed="true" stored="true" required="true" multiValued="true" />
+
+    <dynamicField name="*_name"   type="string"     indexed="true"  stored="true"/>
+    <!-- <dynamicField name="*_is"      type="pints"    indexed="true"  stored="true"/> -->
+
+    <uniqueKey>id</uniqueKey>
+    <defaultSearchField>overview</defaultSearchField>
+    <!-- The StrField type is not analyzed, but indexed/stored verbatim. -->
+    <fieldType name="string" class="solr.StrField" sortMissingLast="true" docValues="true" />
+    <fieldType name="boolean" class="solr.BoolField" sortMissingLast="true"/>
+    <fieldType name="pint" class="solr.IntPointField" docValues="true"/>
+    <fieldType name="pfloat" class="solr.FloatPointField" docValues="true"/>
+    <fieldType name="pdate" class="solr.DatePointField" docValues="true"/>
+    <fieldType name="text_general" class="solr.TextField" positionIncrementGap="100" multiValued="true">
+      <analyzer type="index">
+        <tokenizer name="standard"/>
+        <filter name="stop" ignoreCase="true" words="stopwords.txt" />
+        <!-- in this example, we will only use synonyms at query time
+        <filter name="synonymGraph" synonyms="index_synonyms.txt" ignoreCase="true" expand="false"/>
+        <filter name="flattenGraph"/>
+        -->
+        <filter name="lowercase"/>
+      </analyzer>
+      <analyzer type="query">
+        <tokenizer name="standard"/>
+        <filter name="stop" ignoreCase="true" words="stopwords.txt" />
+        <filter name="synonymGraph" synonyms="synonyms.txt" ignoreCase="true" expand="true"/>
+        <filter name="lowercase"/>
+      </analyzer>
+    </fieldType>
+  
+</schema>

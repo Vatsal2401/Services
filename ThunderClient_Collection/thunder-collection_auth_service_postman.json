@@ -1,0 +1,37 @@
+{
+    "info": {
+        "_postman_id": "2b56c934-cd03-4c1e-a36a-c94f5b3dfa0d",
+        "name": "auth_service",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "filterSession",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://localhost:3003/session/filter",
+                    "path": [
+                        "session",
+                        "filter"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3003"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "\n {\n   \"orderBy\":\"state\",\n   \"filterBy\":{\n    \"device\":\"phone\"\n  }\n }\n"
+                }
+            }
+        }
+    ]
+}

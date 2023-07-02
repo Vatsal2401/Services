@@ -1,0 +1,31 @@
+{
+  "name": "company_service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/@cucumber/cucumber/bin/cucumber-js ./src/use-cases/session/",
+    "start": "node ./src/index.js"
+  },
+  "author": "vatsal patel",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "express": "^4.18.2",
+    "googleapis": "^118.0.0",
+    "joi": "^17.9.2",
+    "jsonwebtoken": "^9.0.0",
+    "kafkajs": "^2.2.4",
+    "lodash": "^4.17.21",
+    "nodemailer": "^6.9.3",
+    "pg": "^8.11.0",
+    "sequelize": "^6.31.1",
+    "solr-node": "^1.2.1",
+    "umzug": "^3.2.1"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^9.0.1",
+    "chai": "^4.3.7",
+    "sinon": "^15.0.2"
+  }
+}

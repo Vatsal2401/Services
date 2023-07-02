@@ -1,0 +1,116 @@
+{
+    "info": {
+        "_postman_id": "265ccca3-794b-468d-a236-03a37dbbfa2d",
+        "name": "Company_Service",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "createCompany",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://localhost:3000/company",
+                    "path": [
+                        "company"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"companyName\":\"RapidOps12\"\n}"
+                }
+            }
+        },
+        {
+            "name": "getAllCompany",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:3000/company",
+                    "path": [
+                        "company"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000"
+                }
+            }
+        },
+        {
+            "name": "deleteCompanyById",
+            "request": {
+                "method": "DELETE",
+                "url": {
+                    "raw": "http://localhost:3000/company/53967915-2dd1-4c7a-b660-915a801be42c",
+                    "path": [
+                        "company",
+                        "53967915-2dd1-4c7a-b660-915a801be42c"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000"
+                }
+            }
+        },
+        {
+            "name": "updateCompany",
+            "request": {
+                "method": "PUT",
+                "url": {
+                    "raw": "http://localhost:3000/company/46cc80f0-ce92-4dd7-ba9a-1f13e6da1891",
+                    "path": [
+                        "company",
+                        "46cc80f0-ce92-4dd7-ba9a-1f13e6da1891"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"companyName\":\"Vatsal's Microsoft\"\n}"
+                }
+            }
+        },
+        {
+            "name": "getCompanyById",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:3000/company/46cc80f0-ce92-4dd7-ba9a-1f13e6da1891",
+                    "path": [
+                        "company",
+                        "46cc80f0-ce92-4dd7-ba9a-1f13e6da1891"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000"
+                }
+            }
+        }
+    ]
+}

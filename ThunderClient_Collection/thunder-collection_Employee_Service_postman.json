@@ -1,0 +1,213 @@
+{
+    "info": {
+        "_postman_id": "bbcd0c47-9de1-4521-a2de-07867d0da483",
+        "name": "Employee_Service",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "createEmployee",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://localhost:3001/employee",
+                    "path": [
+                        "employee"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3001"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"employeeName\": \"Sager\",\n  \"employeeEmail\": \"atulmakwana4500@gmail.com\",\n  \"position\": \"Vlsi engineer\",\n  \"company_name\": \"RapidOps12\"\n}"
+                }
+            }
+        },
+        {
+            "name": "getAllEmployee",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:3001/employee/companyName/RapidOps12",
+                    "path": [
+                        "employee",
+                        "companyName",
+                        "RapidOps12"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3001"
+                },
+                "header": [
+                    {
+                        "key": "accessToken",
+                        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZDhjZmUzNmEtODFmNS00ZDk2LThhNTQtNGFjOTIzY2IwMTJjIiwic2Vzc2lvbl9pZCI6IjUwMDY1ZDYwLTA1MjQtMTFlZS1hZDJlLTA5OTU2ZWZjMTFhMyIsImlhdCI6MTY4NjEzNjQwMX0.e7cuyi7O7jACVROnVlHCyklsuFMsUAicakkVHNvFoww"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "getEmployeeById",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:3006/employee/2ce9bf0f-b6da-49b4-ae6b-be43d667fa21",
+                    "path": [
+                        "employee",
+                        "2ce9bf0f-b6da-49b4-ae6b-be43d667fa21"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3006"
+                }
+            }
+        },
+        {
+            "name": "updateEmployee",
+            "request": {
+                "method": "PUT",
+                "url": {
+                    "raw": "http://localhost:3006/employee/6b52d2ec-c78e-42-adc1-a785e2b23a4e",
+                    "path": [
+                        "employee",
+                        "6b52d2ec-c78e-42-adc1-a785e2b23a4e"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3006"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"employeeName\": \"Amipp67\",\n  \"employeeEmail\": \"fgdserfdfdmit@gmail.com\",\n  \"position\": \"Vlsi engineer\",\n  \"company_name\": \"Google\"\n}"
+                }
+            }
+        },
+        {
+            "name": "deleteEmployee",
+            "request": {
+                "method": "DELETE",
+                "url": {
+                    "raw": "http://localhost:3006/employee/2ce9bf0f-b6da-49b4-ae6b-be43d667fa21",
+                    "path": [
+                        "employee",
+                        "2ce9bf0f-b6da-49b4-ae6b-be43d667fa21"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3006"
+                }
+            }
+        },
+        {
+            "name": "deleteAllEmployeOfCompany",
+            "request": {
+                "method": "DELETE",
+                "url": {
+                    "raw": "http://localhost:3006/employee/companyName/9bb5552f-abfc-4fd1-b552-17f767459cec",
+                    "path": [
+                        "employee",
+                        "companyName",
+                        "9bb5552f-abfc-4fd1-b552-17f767459cec"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3006"
+                }
+            }
+        },
+        {
+            "name": "verifyEmail",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:3001/employee/verify/vatsalpatel9393@gmail.com",
+                    "path": [
+                        "employee",
+                        "verify",
+                        "vatsalpatel9393@gmail.com"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3001"
+                }
+            }
+        },
+        {
+            "name": "loginEmployee",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://localhost:3001/login/employee",
+                    "path": [
+                        "login",
+                        "employee"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3001"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"employeeEmail\": \"atulmakwana4500@gmail.com\",\n  \"employeePassword\": \"default\"\n}"
+                }
+            }
+        },
+        {
+            "name": "logoutEmployee",
+            "request": {
+                "method": "DELETE",
+                "url": {
+                    "raw": "http://localhost:3001/logout/employee",
+                    "path": [
+                        "logout",
+                        "employee"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3001"
+                },
+                "header": [
+                    {
+                        "key": "accessToken",
+                        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZDhjZmUzNmEtODFmNS00ZDk2LThhNTQtNGFjOTIzY2IwMTJjIiwic2Vzc2lvbl9pZCI6IjQxMWIxNzAwLTA1MjQtMTFlZS1hZDJlLTA5OTU2ZWZjMTFhMyIsImlhdCI6MTY4NjEzNjM3Nn0.53w2O52BYEfi1WTt9qlyrcjWiO1RY7TTmM8w_ex_ZeI"
+                    }
+                ]
+            }
+        }
+    ]
+}

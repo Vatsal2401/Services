@@ -1,0 +1,10 @@
+
+cockroach-data-0/
+cockroach-data-1/
+cockroach-data-2/
+auth_service/node_modules/
+employee_service/node_modules/
+company_service/node_modules/
+solr_service/node_modules/
+employee_service/src/use-cases/gcp/gcp-service-account-key.json
+

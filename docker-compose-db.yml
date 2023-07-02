@@ -1,0 +1,42 @@
+version: '3'
+services:
+
+ cockroachdb-0:
+    container_name: cockroachdb-0
+    hostname: cockroachdb-0
+    image: cockroachdb/cockroach:v22.2.8
+    ports:
+      - "26257:26257"
+      - "8080:8080"
+    command: start --insecure --join=cockroachdb-0,cockroachdb-1,cockroachdb-2
+    networks:
+        - roachnet
+    volumes:
+        - ./cockroach-data-0:/cockroach/cockroach-data
+ cockroachdb-1:
+    container_name: cockroachdb-1
+    hostname: cockroachdb-1
+    image: cockroachdb/cockroach:v22.2.8
+    command: start --insecure --join=cockroachdb-0,cockroachdb-1,cockroachdb-2
+    networks:
+        - roachnet
+    volumes:
+         - ./cockroach-data-1:/cockroach/cockroach-data
+ cockroachdb-2:
+    container_name: cockroachdb-2
+    hostname: cockroachdb-2
+    image: cockroachdb/cockroach:v22.2.8
+    command: start --insecure --join=cockroachdb-0,cockroachdb-1,cockroachdb-2
+    networks:
+        - roachnet
+    volumes:
+         - ./cockroach-data-2:/cockroach/cockroach-data
+networks:
+    roachnet:
+      driver: bridge
+ 
+    # volumes:
+    #   - .:/app
+
+
+# sudo docker exec -it 9c1464564613 sh  -c "cd src &&  node migrate-cockroach-database.js"
